@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="postdata()">POST</button>
+    <div id="abc"></div>
+    <script>
+        async function postdata(){
+            //const obj = {id:'605',name:'siri',age:'23',dob:"2001-06-02"}
+            const x = await fetch('http://localhost:4004/student/605',{
+                method:"DELETE",
+                //headers:{"content-type":'application/json'},
+                //body:JSON.stringify(obj)
+            }
+            ).then(
+                (value)=>{console.log("Deleted")},
+                //(error)=>{console.log("Data not posted")}
+            )
+        }
+    </script>
+</body>
+</html>
